@@ -1,0 +1,9 @@
+Sprite2D
+CollisionShape2D
+RigidBody2D
+Camera2D
+Marker2D
+Area2D
+ShapeCast2D
+MeshInstance2D
+CharacterBody2D
