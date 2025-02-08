@@ -1,5 +1,5 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1738288831
+::res://::1738911250
 game_manager.gd::GDScript::-1::1737248688::0::1::::<>Node<>::
 icon.svg::CompressedTexture2D::6475149619026873416::1737248287::1737248569::1::::<><>::
 README.md::TextFile::-1::1737248438::0::1::::<><>::
@@ -7,15 +7,19 @@ README.md::TextFile::-1::1737248438::0::1::::<><>::
 New Piskel(1).png::CompressedTexture2D::7336426081180885128::1738200359::1738200493::1::::<><>::
 New Piskel.png::CompressedTexture2D::6796042109767849816::1738200040::1738200493::1::::<><>::
 Slime.png::CompressedTexture2D::985041068651369795::1738208484::1738208541::1::::<><>::
-::res://Code/::1738209620
-bullet.gd::GDScript::-1::1738206095::0::1::::<>Area2D<>::
-enemy.gd::GDScript::-1::1738209620::0::1::::<>RigidBody2D<>::
-player.gd::GDScript::-1::1738205976::0::1::::<>CharacterBody2D<>::
-::res://tscn/::1738210565
-tes_scene.tscn::PackedScene::2787003309335602947::1738208090::0::1::::<><>::uid://dud10u1rh6sth::::res://tscn/Object/player.tscn
-::res://tscn/Object/::1738209620
-bullet.tscn::PackedScene::2554203731936560801::1738208090::0::1::::<><>::uid://dcr24o0fdjktc::::res://Assets/New Piskel(1).png<>res://Code/bullet.gd
-Enemy.tscn::PackedScene::8214526875348047807::1738209620::0::1::::<><>::res://Code/enemy.gd<>uid://obfqn0tixn28::::res://Assets/Slime.png
-player.tscn::PackedScene::8570856435176594781::1738208090::0::1::::<><>::res://Code/player.gd<>uid://c33b25wgmaqay::::res://Assets/New Piskel.png
-::res://tscn/UserInterface/::1738210575
-Battke_UI.tscn::PackedScene::8019346236770606155::1738210575::0::1::::<><>::
+::res://Code/::1738911199
+bullet.gd::GDScript::-1::1738910916::0::1::::<>Area2D<>::
+enemy.gd::GDScript::-1::1738911199::0::1::::<>RigidBody2D<>::
+PlaterUI.gd::GDScript::-1::1738907695::0::1::::<>Control<>::
+player.gd::GDScript::-1::1738906420::0::1::::<>CharacterBody2D<>::
+STATS.gd::GDScript::-1::1738905696::0::1::::<>Node2D<>::
+World.gd::GDScript::-1::1738902276::0::1::::<>Node2D<>::
+::res://tscn/::1738911202
+tes_scene.tscn::PackedScene::2787003309335602947::1738911202::0::1::::<><>::res://Code/World.gd<>uid://dud10u1rh6sth::::res://tscn/Object/player.tscn
+::res://tscn/Object/::1738911202
+bullet.tscn::PackedScene::2554203731936560801::1738911202::0::1::::<><>::uid://dcr24o0fdjktc::::res://Assets/New Piskel(1).png<>res://Code/bullet.gd
+Enemy.tscn::PackedScene::8214526875348047807::1738911202::0::1::::<><>::res://Code/enemy.gd<>uid://obfqn0tixn28::::res://Assets/Slime.png<>uid://khyhevjasqxd::::res://tscn/Object/stats.tscn
+player.tscn::PackedScene::8570856435176594781::1738911202::0::1::::<><>::res://Code/player.gd<>uid://c33b25wgmaqay::::res://Assets/New Piskel.png<>uid://khyhevjasqxd::::res://tscn/Object/stats.tscn
+stats.tscn::PackedScene::717809031986410561::1738903768::0::1::::<><>::res://Code/STATS.gd
+::res://tscn/UserInterface/::1738907695
+Battke_UI.tscn::PackedScene::8019346236770606155::1738907695::0::1::::<><>::res://Code/PlaterUI.gd

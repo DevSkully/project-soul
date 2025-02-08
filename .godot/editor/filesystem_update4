@@ -1,1 +1,5 @@
-res://tscn/UserInterface/Battke_UI.tscn
+res://Code/World.gd
+res://tscn/tes_scene.tscn
+res://tscn/Object/player.tscn
+res://tscn/Object/Enemy.tscn
+res://tscn/Object/bullet.tscn

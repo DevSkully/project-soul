@@ -1,6 +1,8 @@
 extends Area2D
 
-var speed = 750.0
+const speed = 750.0
+
+var damage:int = 10
 var direction = Vector2.ZERO
 
 func _ready() -> void:
@@ -14,5 +16,8 @@ func set_direction(dir:Vector2):
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("mobs"):
-		body.queue_free()
+		body.STATS.take_damage(damage)
+	queue_free()
+
+func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
 	queue_free()

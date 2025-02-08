@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://dud10u1rh6sth"]
+[gd_scene load_steps=6 format=3 uid="uid://dud10u1rh6sth"]
 
 [ext_resource type="Script" path="res://Code/player.gd" id="1_5hwy3"]
 [ext_resource type="Texture2D" uid="uid://c33b25wgmaqay" path="res://Assets/New Piskel.png" id="2_31bqy"]
+[ext_resource type="PackedScene" uid="uid://khyhevjasqxd" path="res://tscn/Object/stats.tscn" id="3_xravh"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_w8ty8"]
 
@@ -29,3 +30,9 @@ rotation = 1.5708
 shape = SubResource("CapsuleShape2D_irdab")
 
 [node name="Marker2D" type="Marker2D" parent="."]
+
+[node name="Stats" parent="." instance=ExtResource("3_xravh")]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+drag_horizontal_enabled = true
+drag_vertical_enabled = true

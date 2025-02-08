@@ -17,4 +17,7 @@ shape = SubResource("CircleShape2D_ebg7y")
 scale = Vector2(3, 3)
 texture = ExtResource("1_vog6a")
 
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
