@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://bhi0i5yo3wd5"]
+
+[ext_resource type="Script" path="res://Code/Drops.gd" id="1_go85b"]
+[ext_resource type="Texture2D" uid="uid://1f2ijdsuilvv" path="res://Assets/Dark-Soul.png" id="2_748cc"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_n1fxw"]
+radius = 8.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7iiv6"]
+
+[node name="Drop" type="Area2D"]
+script = ExtResource("1_go85b")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_n1fxw")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_748cc")
+
+[node name="pick_up_area" type="Area2D" parent="."]
+scale = Vector2(6, 6)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pick_up_area"]
+shape = SubResource("CircleShape2D_7iiv6")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_entered" from="pick_up_area" to="." method="_on_pick_up_area_body_entered"]
+[connection signal="body_exited" from="pick_up_area" to="." method="_on_pick_up_area_body_exited"]

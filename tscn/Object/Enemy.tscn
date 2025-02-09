@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://dpbgb7pgbmdrb"]
+[gd_scene load_steps=7 format=3 uid="uid://dpbgb7pgbmdrb"]
 
 [ext_resource type="Script" path="res://Code/enemy.gd" id="1_pj058"]
 [ext_resource type="Texture2D" uid="uid://obfqn0tixn28" path="res://Assets/Slime.png" id="1_t0w1b"]
+[ext_resource type="PackedScene" uid="uid://bhi0i5yo3wd5" path="res://tscn/Object/Drop.tscn" id="2_xg4td"]
 [ext_resource type="PackedScene" uid="uid://khyhevjasqxd" path="res://tscn/Object/stats.tscn" id="3_jl4n5"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_oq7d4"]
@@ -15,6 +16,7 @@ height = 54.0
 [node name="Enemy" type="RigidBody2D" groups=["mobs"]]
 collision_layer = 17
 script = ExtResource("1_pj058")
+soul = ExtResource("2_xg4td")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -9)

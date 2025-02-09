@@ -3,6 +3,8 @@ extends Node2D
 @export var HealthPoints:int = 100
 @export var ManaPoints:int = 100
 
+@onready var Drop = preload("res://tscn/Object/Drop.tscn")
+
 ## ---FUNCTOINS--- ##
 # GETTERS
 func get_Health()->int:
@@ -27,4 +29,4 @@ func recover(MP:int)->void:
 ## -- PROCESS -- ##
 func _process(delta: float) -> void:
 	if HealthPoints <= 0 :
-		get_parent().queue_free()
+		get_parent().death()
