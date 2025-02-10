@@ -1,35 +1,35 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1739088372
-icon.svg::CompressedTexture2D::6475149619026873416::1739066669::1739083704::1::::<><>::
-README.md::TextFile::-1::1739066669::0::1::::<><>::
-::res://Assets/::1739108665
-Dark-Soul.png::CompressedTexture2D::1836885946704531339::1739085367::1739085431::1::::<><>::
-New Piskel(1).png::CompressedTexture2D::7336426081180885128::1739066669::1739083704::1::::<><>::
-New Piskel.png::CompressedTexture2D::6796042109767849816::1739066669::1739083704::1::::<><>::
-Red-Soul.png::CompressedTexture2D::3890538086142824928::1739085394::1739085431::1::::<><>::
-Slime.png::CompressedTexture2D::985041068651369795::1739066669::1739083704::1::::<><>::
-Yellow-Soul.png::CompressedTexture2D::1035163668533355148::1739085417::1739085431::1::::<><>::
-::res://Assets/TileSet/::1739108665
-BeachFinalTileSet.png::CompressedTexture2D::3151579651256327618::1739105108::1739108668::1::::<><>::
-GrassFinalTileSet.png::CompressedTexture2D::3760383468495144731::1739105983::1739108668::1::::<><>::
-RockWallFinalTileSet.png::CompressedTexture2D::4598062004106849446::1739105567::1739108668::1::::<><>::
-::res://Code/::1739099658
-bullet.gd::GDScript::-1::1739096992::0::1::::<>Area2D<>::
-Drops.gd::GDScript::-1::1739099658::0::1::::<>Area2D<>::
-enemy.gd::GDScript::-1::1739095700::0::1::::<>RigidBody2D<>::
-game_manager.gd::GDScript::-1::1739088808::0::1::::<>Node<>::
-PlaterUI.gd::GDScript::-1::1739066669::0::1::::<>Control<>::
-player.gd::GDScript::-1::1739096297::0::1::::<>CharacterBody2D<>::
-STATS.gd::GDScript::-1::1739094901::0::1::::<>Node2D<>::
-World.gd::GDScript::-1::1739066669::0::1::::<>Node2D<>::
-::res://tscn/::1739099878
-tes_scene.tscn::PackedScene::2787003309335602947::1739099796::0::1::::<><>::res://Code/World.gd<>uid://dud10u1rh6sth::::res://tscn/Object/player.tscn
-::res://tscn/Object/::1739099796
-bullet.tscn::PackedScene::2554203731936560801::1739094569::0::1::::<><>::uid://dcr24o0fdjktc::::res://Assets/New Piskel(1).png<>res://Code/bullet.gd
-Drop.tscn::PackedScene::85170336347423516::1739099796::0::1::::<><>::res://Code/Drops.gd<>uid://1f2ijdsuilvv::::res://Assets/Dark-Soul.png
-Enemy.tscn::PackedScene::8214526875348047807::1739099796::0::1::::<><>::res://Code/enemy.gd<>uid://obfqn0tixn28::::res://Assets/Slime.png<>uid://bhi0i5yo3wd5::::res://tscn/Object/Drop.tscn<>uid://khyhevjasqxd::::res://tscn/Object/stats.tscn
-player.tscn::PackedScene::8570856435176594781::1739099796::0::1::::<><>::res://Code/player.gd<>uid://c33b25wgmaqay::::res://Assets/New Piskel.png<>uid://khyhevjasqxd::::res://tscn/Object/stats.tscn
-stats.tscn::PackedScene::717809031986410561::1739066669::0::1::::<><>::res://Code/STATS.gd
-::res://tscn/Scene/::1739099878
-::res://tscn/UserInterface/::1739066669
-Battke_UI.tscn::PackedScene::8019346236770606155::1739066669::0::1::::<><>::res://Code/PlaterUI.gd
+::res://::1739165971
+icon.svg::CompressedTexture2D::6475149619026873416::1737248287::1739160383::1::::<><>::
+README.md::TextFile::-1::1737248438::0::1::::<><>::
+::res://Assets/::1739160383
+Dark-Soul.png::CompressedTexture2D::1836885946704531339::1739108818::1739160383::1::::<><>::
+New Piskel(1).png::CompressedTexture2D::7336426081180885128::1738200359::1739160383::1::::<><>::
+New Piskel.png::CompressedTexture2D::6796042109767849816::1738200040::1739160383::1::::<><>::
+Red-Soul.png::CompressedTexture2D::3890538086142824928::1739108818::1739160383::1::::<><>::
+Slime.png::CompressedTexture2D::985041068651369795::1738208484::1739160383::1::::<><>::
+Yellow-Soul.png::CompressedTexture2D::1035163668533355148::1739108818::1739160383::1::::<><>::
+::res://Assets/TileSet/::1739163392
+BeachFinalTileSet.png::CompressedTexture2D::3151579651256327618::1739108818::1739160383::1::::<><>::
+GrassFinalTileSet.png::CompressedTexture2D::3760383468495144731::1739108818::1739160383::1::::<><>::
+newTileSet.tscn::PackedScene::8942514987275077673::1739163392::0::1::::<><>::uid://btts74cr3yl3x::::res://Assets/TileSet/GrassFinalTileSet.png
+RockWallFinalTileSet.png::CompressedTexture2D::4598062004106849446::1739108818::1739160383::1::::<><>::
+::res://Code/::1739108818
+bullet.gd::GDScript::-1::1739108818::0::1::::<>Area2D<>::
+Drops.gd::GDScript::-1::1739108818::0::1::::<>Area2D<>::
+enemy.gd::GDScript::-1::1739108818::0::1::::<>RigidBody2D<>::
+game_manager.gd::GDScript::-1::1739108818::0::1::::<>Node<>::
+PlaterUI.gd::GDScript::-1::1738907695::0::1::::<>Control<>::
+player.gd::GDScript::-1::1739108818::0::1::::<>CharacterBody2D<>::
+STATS.gd::GDScript::-1::1739108818::0::1::::<>Node2D<>::
+World.gd::GDScript::-1::1738912222::0::1::::<>Node2D<>::
+::res://tscn/::1739163392
+tes_scene.tscn::PackedScene::2787003309335602947::1739163392::0::1::::<><>::res://Code/World.gd<>uid://dud10u1rh6sth::::res://tscn/Object/player.tscn<>uid://d0n26ed3t1umb::::res://Assets/TileSet/newTileSet.tscn
+::res://tscn/Object/::1739163392
+bullet.tscn::PackedScene::2554203731936560801::1738912230::0::1::::<><>::uid://dcr24o0fdjktc::::res://Assets/New Piskel(1).png<>res://Code/bullet.gd
+Drop.tscn::PackedScene::85170336347423516::1739163392::0::1::::<><>::res://Code/Drops.gd<>uid://1f2ijdsuilvv::::res://Assets/Dark-Soul.png
+Enemy.tscn::PackedScene::8214526875348047807::1739163392::0::1::::<><>::res://Code/enemy.gd<>uid://obfqn0tixn28::::res://Assets/Slime.png<>uid://bhi0i5yo3wd5::::res://tscn/Object/Drop.tscn<>uid://khyhevjasqxd::::res://tscn/Object/stats.tscn
+player.tscn::PackedScene::8570856435176594781::1739163392::0::1::::<><>::res://Code/player.gd<>uid://c33b25wgmaqay::::res://Assets/New Piskel.png<>uid://khyhevjasqxd::::res://tscn/Object/stats.tscn
+stats.tscn::PackedScene::717809031986410561::1738903768::0::1::::<><>::res://Code/STATS.gd
+::res://tscn/UserInterface/::1738907695
+Battke_UI.tscn::PackedScene::8019346236770606155::1738907695::0::1::::<><>::res://Code/PlaterUI.gd
