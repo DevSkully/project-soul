@@ -1,7 +1,10 @@
 extends Node2D
 
-@export var HealthPoints:int = 100
-@export var ManaPoints:int = 100
+signal health_change
+signal mana_change
+
+@export var HealthPoints:int
+@export var ManaPoints:int
 
 @onready var Drop = preload("res://tscn/Object/Drop.tscn")
 
@@ -13,18 +16,21 @@ func get_Mana()->int:
 	return ManaPoints
 # SETTERS
 func set_Health(HP:int)->void:
-	HealthPoints = HP
+	self.HealthPoints = HP
 func set_Mana(MP:int)->void:
-	ManaPoints = MP
+	self.ManaPoints = MP
 
 # HEALTH FUNCTINOS
 func Heal(HP:int)->void:
 	HealthPoints += HP
+	health_change.emit()
 func take_damage(damage:int)->void:
 	HealthPoints -= damage
+	health_change.emit()
 # MANA FUNCTIONS
 func recover(MP:int)->void:
 	ManaPoints += MP
+	mana_change.emit()
 
 ## -- PROCESS -- ##
 func _process(delta: float) -> void:

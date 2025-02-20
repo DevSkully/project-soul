@@ -10,7 +10,8 @@ func _ready() -> void:
 		queue_free()
 
 func _process(delta: float) -> void:
-	distance = (player.global_position - global_position)
+	if player != null:
+		distance = (player.global_position - global_position)
 	if movable == true:
 		_move(distance, delta)
 

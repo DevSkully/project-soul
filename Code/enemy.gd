@@ -1,13 +1,11 @@
 extends RigidBody2D
 
-var speed:float = 200
+const speed:float = 200
 var player:CharacterBody2D
 
 @onready var STATS:Node2D = $Stats
+@export var damage:int = 10
 @export var soul:PackedScene
-
-func _init() -> void:
-	global_position = Vector2(200,200)
 
 func _ready() -> void:
 	STATS.set_Health(20)
@@ -32,5 +30,6 @@ func _physics_process(delta: float) -> void:
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.name == "Player" :
-		body.STATS.take_damage(10)
+		print(player.STATS.get_Health())
+		body.STATS.take_damage(damage)
 		queue_free()
