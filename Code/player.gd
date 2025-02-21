@@ -3,6 +3,9 @@ extends CharacterBody2D
 signal experience_change
 signal level_up
 
+var maxExperience:int = 50
+var Level:int = 1
+
 const speed = 300.0
 const JUMP_VELOCITY = -400.0
 
@@ -11,14 +14,14 @@ const bullet = preload("res://tscn/Object/bullet.tscn")
 @export var player_damage:int = 10
 @export var experience:int = 0
 
-var maxExperience:int = 50
-
 @onready var STATS:Node2D = $Stats
+@onready var CL:CanvasLayer = $Camera2D/CanvasLayer
 
 ## ---- FUNCTION ---- ##
 func _ready()->void:
 	STATS.set_Health(120)
 	STATS.set_Mana(100)
+	CL.sudo_ready()
 
 ## -- GETTERS -- ##
 func get_damage()->int:
@@ -29,7 +32,9 @@ func get_input():
 
 ## -- SETTERS -- ##
 func set_Damage(damage:int)->void:
-	player_damage = damage
+	self.player_damage = damage
+func set_Level(level:int)->void:
+	self.Level = level
 
 ## -- OTHER -- ##
 func shoot():
@@ -43,14 +48,15 @@ func incrementExperience(exp:int)->void:
 	experience_change.emit()
 func LevelUp()->void:
 	experience = 0
-	maxExperience += (maxExperience / 2)
+	maxExperience += maxExperience / 2
+	Level += 1
 	level_up.emit()
 func death()->void:
 	queue_free()
 
 ## -- PROCESS -- ##
 func _process(delta: float) -> void:
-	if experience == maxExperience:
+	if experience >= maxExperience:
 		LevelUp()
 func _physics_process(delta: float) -> void:
 	get_input()

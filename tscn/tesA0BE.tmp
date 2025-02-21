@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://bfybsje1a4sel"]
+
+[ext_resource type="Script" path="res://Code/World.gd" id="1_1ugi7"]
+[ext_resource type="PackedScene" uid="uid://dud10u1rh6sth" path="res://tscn/Object/player.tscn" id="1_crbry"]
+[ext_resource type="PackedScene" uid="uid://d0n26ed3t1umb" path="res://Assets/TileSet/newTileSet.tscn" id="3_vm5ts"]
+
+[node name="World" type="Node2D"]
+script = ExtResource("1_1ugi7")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true
+
+[node name="newTileSet" parent="." instance=ExtResource("3_vm5ts")]
+
+[node name="Player" parent="." instance=ExtResource("1_crbry")]
+position = Vector2(596, 316)
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

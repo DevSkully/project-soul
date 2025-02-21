@@ -6,8 +6,6 @@ signal mana_change
 @export var HealthPoints:int
 @export var ManaPoints:int
 
-@onready var Drop = preload("res://tscn/Object/Drop.tscn")
-
 ## ---FUNCTOINS--- ##
 # GETTERS
 func get_Health()->int:
