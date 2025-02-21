@@ -5,6 +5,7 @@ signal level_up
 
 var maxExperience:int = 50
 var Level:int = 1
+var input_dir:Vector2
 
 const speed = 300.0
 const JUMP_VELOCITY = -400.0
@@ -16,6 +17,7 @@ const bullet = preload("res://tscn/Object/bullet.tscn")
 
 @onready var STATS:Node2D = $Stats
 @onready var CL:CanvasLayer = $Camera2D/CanvasLayer
+@onready var anim_control:Node2D = $Animations
 
 ## ---- FUNCTION ---- ##
 func _ready()->void:
@@ -27,7 +29,7 @@ func _ready()->void:
 func get_damage()->int:
 	return player_damage
 func get_input():
-	var input_dir = Input.get_vector("left","right","up","down")
+	input_dir = Input.get_vector("left","right","up","down")
 	velocity = input_dir * speed
 
 ## -- SETTERS -- ##
@@ -52,7 +54,7 @@ func LevelUp()->void:
 	Level += 1
 	level_up.emit()
 func death()->void:
-	queue_free()
+	anim_control.player_death()
 
 ## -- PROCESS -- ##
 func _process(delta: float) -> void:
