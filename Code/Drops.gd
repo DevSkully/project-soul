@@ -5,6 +5,11 @@ var distance:Vector2 = Vector2.ZERO
 var _delta:float
 var movable:bool
 
+## TEXTURES ##
+@onready var low_expDrop = "res://Assets/Dark-Soul.png"
+@onready var medium_expDrop = "res://Assets/Yellow-Soul.png"
+@onready var high_expDrop = "res://Assets/Red-Soul.png"
+
 func _ready() -> void:
 	if player==null:
 		queue_free()

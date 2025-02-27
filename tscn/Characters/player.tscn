@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://dud10u1rh6sth"]
+[gd_scene load_steps=15 format=3 uid="uid://dud10u1rh6sth"]
 
 [ext_resource type="Script" path="res://Code/player.gd" id="1_5hwy3"]
 [ext_resource type="PackedScene" uid="uid://khyhevjasqxd" path="res://tscn/Object/stats.tscn" id="3_xravh"]
@@ -6,11 +6,52 @@
 [ext_resource type="Texture2D" uid="uid://ckww06ro5qhwv" path="res://Assets/Default.png" id="5_42ael"]
 [ext_resource type="Texture2D" uid="uid://f4k8n1e7qmem" path="res://Assets/empty-skill-container.png" id="5_pq2a7"]
 [ext_resource type="Script" path="res://Code/Player_Anim.gd" id="5_tdqkg"]
+[ext_resource type="Script" path="res://Code/Movement_Buffer.gd" id="7_gkwbg"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_w8ty8"]
 
-[sub_resource type="Animation" id="Animation_cgniw"]
-resource_name = "Running"
+[sub_resource type="Animation" id="Animation_1q7ri"]
+resource_name = "Death"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [5, 6, 7, 8]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../CollisionShape2D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0, 0.785398, 1.5708]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../CollisionShape2D:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.6, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-3, -8), Vector2(0, 0), Vector2(4, 5)]
+}
+
+[sub_resource type="Animation" id="Animation_txwsg"]
+resource_name = "Idle"
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -19,34 +60,10 @@ tracks/0/path = NodePath("Sprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.233333, 0.5, 0.733333, 1),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.9),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [1, 2, 3, 4, 5]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("../CollisionShape2D:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.233333, 0.5, 0.733333, 1),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(-3, -7), Vector2(-3, -7), Vector2(-3, -7), Vector2(-3, -7), Vector2(-3, -7)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("../CollisionShape2D:rotation")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.233333, 0.5, 0.733333, 1),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 0,
-"values": [0.0, 0.0, 0.0, 0.0, 0.0]
+"values": [0, 0]
 }
 
 [sub_resource type="Animation" id="Animation_mgxew"]
@@ -100,9 +117,9 @@ tracks/3/keys = {
 "values": [Vector2(1, 1)]
 }
 
-[sub_resource type="Animation" id="Animation_x8ug6"]
-resource_name = "Death"
-length = 1.5
+[sub_resource type="Animation" id="Animation_cgniw"]
+resource_name = "Running"
+loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -110,10 +127,10 @@ tracks/0/path = NodePath("Sprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.3, 0.6, 0.9),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.233333, 0.5, 0.733333, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 1,
-"values": [5, 6, 7, 8]
+"values": [1, 2, 3, 4, 5]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -122,10 +139,10 @@ tracks/1/path = NodePath("../CollisionShape2D:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.3, 0.6, 0.9),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.233333, 0.5, 0.733333, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(-3, -7), Vector2(-3, -7), Vector2(-1.19209e-07, 0), Vector2(5, 5)]
+"values": [Vector2(-3, -7), Vector2(-3, -7), Vector2(-3, -7), Vector2(-3, -7), Vector2(-3, -7)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -134,43 +151,16 @@ tracks/2/path = NodePath("../CollisionShape2D:rotation")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.3, 0.6, 0.9),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.233333, 0.5, 0.733333, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
-"values": [0.0, 0.0, 0.785398, 1.5708]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("../CollisionShape2D:scale")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.3, 0.6, 0.9),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(1, 1), Vector2(1, 1), Vector2(1, 1), Vector2(1, 1)]
-}
-
-[sub_resource type="Animation" id="Animation_3s8ba"]
-resource_name = "Idle"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.9),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [0, 0]
+"values": [0.0, 0.0, 0.0, 0.0, 0.0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_7bql7"]
 _data = {
-"Death": SubResource("Animation_x8ug6"),
-"Idle": SubResource("Animation_3s8ba"),
+"Death": SubResource("Animation_1q7ri"),
+"Idle": SubResource("Animation_txwsg"),
 "RESET": SubResource("Animation_mgxew"),
 "Running": SubResource("Animation_cgniw")
 }
@@ -220,10 +210,10 @@ limit_bottom = 1200
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
 
-[node name="CanvasLayer" type="CanvasLayer" parent="Camera2D"]
+[node name="Player_UI" type="CanvasLayer" parent="Camera2D"]
 script = ExtResource("4_ho2t1")
 
-[node name="HealthBar" type="ProgressBar" parent="Camera2D/CanvasLayer"]
+[node name="HealthBar" type="ProgressBar" parent="Camera2D/Player_UI"]
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
@@ -232,7 +222,7 @@ offset_bottom = 27.0
 grow_horizontal = 0
 max_value = 120.0
 
-[node name="ManaBar" type="ProgressBar" parent="Camera2D/CanvasLayer"]
+[node name="ManaBar" type="ProgressBar" parent="Camera2D/Player_UI"]
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
@@ -241,7 +231,7 @@ offset_top = 30.0
 offset_bottom = 57.0
 grow_horizontal = 0
 
-[node name="ExperienceBar" type="ProgressBar" parent="Camera2D/CanvasLayer"]
+[node name="ExperienceBar" type="ProgressBar" parent="Camera2D/Player_UI"]
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
@@ -250,35 +240,35 @@ offset_top = 60.0
 offset_bottom = 87.0
 grow_horizontal = 0
 
-[node name="Health" type="Label" parent="Camera2D/CanvasLayer"]
+[node name="Health" type="Label" parent="Camera2D/Player_UI"]
 offset_left = 1007.0
 offset_top = 5.0
 offset_right = 1063.0
 offset_bottom = 28.0
 text = "Health:"
 
-[node name="Mana" type="Label" parent="Camera2D/CanvasLayer"]
+[node name="Mana" type="Label" parent="Camera2D/Player_UI"]
 offset_left = 1015.0
 offset_top = 35.0
 offset_right = 1063.0
 offset_bottom = 58.0
 text = "Mana:"
 
-[node name="Experience" type="Label" parent="Camera2D/CanvasLayer"]
+[node name="Experience" type="Label" parent="Camera2D/Player_UI"]
 offset_left = 1052.0
 offset_top = 65.0
 offset_right = 1142.0
 offset_bottom = 88.0
 text = "Experience:"
 
-[node name="Level_Label" type="Label" parent="Camera2D/CanvasLayer"]
+[node name="Level_Label" type="Label" parent="Camera2D/Player_UI"]
 offset_left = 1097.0
 offset_top = 95.0
 offset_right = 1142.0
 offset_bottom = 118.0
 text = "Level:"
 
-[node name="Level" type="Label" parent="Camera2D/CanvasLayer"]
+[node name="Level" type="Label" parent="Camera2D/Player_UI"]
 offset_left = 1151.0
 offset_top = 95.0
 offset_right = 1191.0
@@ -286,30 +276,45 @@ offset_bottom = 118.0
 text = "1"
 horizontal_alignment = 1
 
-[node name="Skill03" type="TextureRect" parent="Camera2D/CanvasLayer"]
+[node name="Skill03" type="TextureRect" parent="Camera2D/Player_UI"]
 offset_left = 1180.0
 offset_top = 125.0
 offset_right = 1220.0
 offset_bottom = 165.0
 texture = ExtResource("5_pq2a7")
 
-[node name="Skill04" type="TextureRect" parent="Camera2D/CanvasLayer"]
+[node name="Skill04" type="TextureRect" parent="Camera2D/Player_UI"]
 offset_left = 1230.0
 offset_top = 125.0
 offset_right = 1270.0
 offset_bottom = 165.0
 texture = ExtResource("5_pq2a7")
 
-[node name="Skill02" type="TextureRect" parent="Camera2D/CanvasLayer"]
+[node name="Skill02" type="TextureRect" parent="Camera2D/Player_UI"]
 offset_left = 1130.0
 offset_top = 125.0
 offset_right = 1170.0
 offset_bottom = 165.0
 texture = ExtResource("5_pq2a7")
 
-[node name="TextureRect" type="TextureRect" parent="Camera2D/CanvasLayer"]
+[node name="Skill01" type="TextureRect" parent="Camera2D/Player_UI"]
 offset_left = 1080.0
 offset_top = 125.0
 offset_right = 1120.0
 offset_bottom = 165.0
 texture = ExtResource("5_pq2a7")
+
+[node name="PauseMenu" type="CanvasLayer" parent="Camera2D"]
+process_mode = 2
+
+[node name="Button" type="Button" parent="Camera2D/PauseMenu"]
+offset_left = 600.5
+offset_top = 344.5
+offset_right = 679.5
+offset_bottom = 375.5
+text = "Continue"
+
+[node name="Movement_Buffer" type="Node2D" parent="."]
+script = ExtResource("7_gkwbg")
+
+[connection signal="pressed" from="Camera2D/PauseMenu/Button" to="." method="_unpause"]
