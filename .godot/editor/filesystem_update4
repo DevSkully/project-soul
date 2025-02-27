@@ -1,4 +1,5 @@
-res://tscn/Object/player.tscn
-res://Code/Player_Anim.gd
-res://Code/player.gd
+res://tscn/Character/Hero_obj.tscn
+res://Code/Hero_scripts/skill_set.gd
 res://tscn/tes_scene.tscn
+res://Code/Hero_scripts/stats.gd
+res://Code/Hero_scripts/hero_obj.gd

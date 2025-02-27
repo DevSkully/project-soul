@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://daivcumljsoyb"
-path="res://.godot/imported/GreenSlime.png-9e9c74182a1daba2f58e0f969f2cf32c.ctex"
+uid="uid://beh57rgurvurv"
+path="res://.godot/imported/ExperienceBar_Under.png-3d87fa8b46df8e4c1120d202a8bcb14f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/GreenSlime.png"
-dest_files=["res://.godot/imported/GreenSlime.png-9e9c74182a1daba2f58e0f969f2cf32c.ctex"]
+source_file="res://Assets/Other/Experience_ProgrsBar/ExperienceBar_Under.png"
+dest_files=["res://.godot/imported/ExperienceBar_Under.png-3d87fa8b46df8e4c1120d202a8bcb14f.ctex"]
 
 [params]
 

@@ -1,0 +1,93 @@
+[gd_scene load_steps=15 format=3 uid="uid://b2w35am6sy0ey"]
+
+[ext_resource type="Script" path="res://Code/Hero_scripts/stats.gd" id="1_myuu2"]
+[ext_resource type="Script" path="res://Code/Hero_scripts/hero_obj.gd" id="1_yb6k8"]
+[ext_resource type="Texture2D" uid="uid://pv3vma8pfctg" path="res://Assets/Other/Experience_ProgrsBar/ExperienceBar_Over.png" id="2_2tpt5"]
+[ext_resource type="Script" path="res://Code/Hero_scripts/hero_movement.gd" id="3_30u0j"]
+[ext_resource type="Texture2D" uid="uid://hnl3t5kojx8c" path="res://Assets/Other/Experience_ProgrsBar/ExperienceBar_Progression.png" id="3_cg6ps"]
+[ext_resource type="Texture2D" uid="uid://beh57rgurvurv" path="res://Assets/Other/Experience_ProgrsBar/ExperienceBar_Under.png" id="3_x2m0p"]
+[ext_resource type="Script" path="res://Code/Hero_scripts/skill_set.gd" id="4_7owi8"]
+[ext_resource type="Texture2D" uid="uid://d05fes3j8wpcv" path="res://Assets/Other/Health_ProgrsBar/Health_Under.png" id="8_tkv20"]
+[ext_resource type="Texture2D" uid="uid://5oxtg2o15xbc" path="res://Assets/Other/Health_ProgrsBar/Health_Over.png" id="9_suym4"]
+[ext_resource type="Texture2D" uid="uid://dqfednugrxu2r" path="res://Assets/Other/Health_ProgrsBar/Health_Progress.png" id="10_p20l5"]
+[ext_resource type="Texture2D" uid="uid://c6fhe1tssetvs" path="res://Assets/Other/Health_ProgrsBar/Mana_Under02.png" id="11_g50su"]
+[ext_resource type="Texture2D" uid="uid://dw7rou06cewwx" path="res://Assets/Other/Health_ProgrsBar/Mana_Under.png" id="12_qbsqr"]
+[ext_resource type="Texture2D" uid="uid://ctjkvpx8i71g" path="res://Assets/Other/Health_ProgrsBar/Mana_Progress.png" id="13_pk47v"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_y5ks7"]
+radius = 12.0
+height = 50.0
+
+[node name="HeroObj" type="CharacterBody2D"]
+script = ExtResource("1_yb6k8")
+
+[node name="Scripts" type="Node" parent="."]
+
+[node name="Stats" type="Node" parent="Scripts"]
+script = ExtResource("1_myuu2")
+
+[node name="Movement" type="Node" parent="Scripts"]
+script = ExtResource("3_30u0j")
+
+[node name="Initialize" type="Node" parent="Scripts"]
+script = ExtResource("4_7owi8")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -256.0
+offset_top = -144.0
+offset_right = 256.0
+offset_bottom = 144.0
+
+[node name="Experience_Bar" type="TextureProgressBar" parent="Control"]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 3.0
+offset_right = 506.0
+offset_bottom = 17.0
+texture_under = ExtResource("3_x2m0p")
+texture_over = ExtResource("2_2tpt5")
+texture_progress = ExtResource("3_cg6ps")
+tint_under = Color(1, 1, 1, 0.207843)
+
+[node name="Mana_Bar" type="TextureProgressBar" parent="Control"]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 31.0
+offset_right = 77.0
+offset_bottom = 36.0
+value = 100.0
+texture_under = ExtResource("11_g50su")
+texture_over = ExtResource("12_qbsqr")
+texture_progress = ExtResource("13_pk47v")
+tint_under = Color(1, 1, 1, 0.207843)
+
+[node name="Health_Bar" type="TextureProgressBar" parent="Control"]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 20.0
+offset_right = 103.0
+offset_bottom = 32.0
+value = 100.0
+texture_under = ExtResource("10_p20l5")
+texture_over = ExtResource("9_suym4")
+texture_progress = ExtResource("8_tkv20")
+tint_under = Color(1, 1, 1, 0.207843)
+
+[node name="Player_Portrait" type="TextureRect" parent="Control"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Soul_Portrait" type="TextureRect" parent="Control"]
+layout_mode = 0
+offset_top = 1.0
+offset_right = 40.0
+offset_bottom = 41.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_y5ks7")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(2.5, 2.5)

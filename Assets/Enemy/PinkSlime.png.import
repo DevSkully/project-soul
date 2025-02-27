@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://f4k8n1e7qmem"
-path="res://.godot/imported/empty-skill-container.png-f73000ece341c45aacdb3041383fa65b.ctex"
+uid="uid://vwxjfye3qt1"
+path="res://.godot/imported/PinkSlime.png-79dac3f717547c6fa07011b7d4399ac3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/empty-skill-container.png"
-dest_files=["res://.godot/imported/empty-skill-container.png-f73000ece341c45aacdb3041383fa65b.ctex"]
+source_file="res://Assets/Enemy/PinkSlime.png"
+dest_files=["res://.godot/imported/PinkSlime.png-79dac3f717547c6fa07011b7d4399ac3.ctex"]
 
 [params]
 
