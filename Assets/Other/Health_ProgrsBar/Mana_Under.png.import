@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://vwxjfye3qt1"
-path="res://.godot/imported/PinkSlime.png-ac5d211b8c2c7dca2da8ac49e5466261.ctex"
+uid="uid://dw7rou06cewwx"
+path="res://.godot/imported/Mana_Under.png-a9d40d869d5986d51e2353d3bb243cb3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/PinkSlime.png"
-dest_files=["res://.godot/imported/PinkSlime.png-ac5d211b8c2c7dca2da8ac49e5466261.ctex"]
+source_file="res://Assets/Other/Health_ProgrsBar/Mana_Under.png"
+dest_files=["res://.godot/imported/Mana_Under.png-a9d40d869d5986d51e2353d3bb243cb3.ctex"]
 
 [params]
 

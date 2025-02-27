@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Button
 CanvasLayer
 Control
@@ -12,3 +13,19 @@ Panel
 ProgressBar
 Container
 MeshInstance2D
+=======
+TextureProgressBar
+Node2D
+AnimationPlayer
+Node
+TextureRect
+ProgressBar
+Camera2D
+Sprite2D
+Control
+CollisionShape2D
+CharacterBody2D
+CanvasLayer
+AnimationTree
+AnimatedSprite2D
+>>>>>>> origin/main

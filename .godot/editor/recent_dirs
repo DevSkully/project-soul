@@ -1,4 +1,9 @@
+<<<<<<< HEAD
 res://tscn/Scene
+=======
+res://Code/Hero_scripts
+res://tscn/Character
+>>>>>>> origin/main
 res://tscn/Object
 res://Code
 res://tscn
